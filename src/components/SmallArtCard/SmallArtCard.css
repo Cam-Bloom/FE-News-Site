@@ -1,0 +1,63 @@
+.smallCard {
+    display: flex;
+    height: 10rem;
+    border-radius: 1rem;
+    background-color: #FFFFFF;
+    margin: 1rem 0;
+}
+
+
+
+@media screen and (max-width: 600px) {
+
+img{
+    border-radius: 1rem 0 0 1rem;
+    max-width: 170px;
+}
+
+h3{
+    margin: 1rem 1rem 1rem 0.5rem;
+    font-family: var(--title-font);
+    font-weight: 600;
+}
+
+button {
+    padding: .5rem 1.25rem .5rem 1.25rem;
+    color: var(--colour-pure-white);
+    background-color: var(--colour-brown);
+    border-radius: 1rem;
+    border: 1px solid transparent;
+    transition: var(--transition);
+    font-weight: 500;
+}
+
+button:hover{
+    border: 1px solid var(--colour-brown);
+    color: var(--colour-brown);
+    background-color: transparent;
+}
+
+.smallCard {
+    display: flex;
+    height: 8rem;
+    border-radius: 1rem;
+    background-color: #FFFFFF;
+    margin: 1rem 0;
+}
+
+.subHeadigns {
+    display: flex;
+    gap: 1rem;
+    margin: 0 0 0 0.5rem;
+    align-items: center;
+}
+
+.truncate {
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+}
