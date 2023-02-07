@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import HomeArtCont from '../HomeArticleContainer/HomeArticleContainer'
+import HomeArticleContainer from '../HomeArticleContainer/HomeArticleContainer'
 
 
 const Home = () => {
@@ -8,7 +8,7 @@ const Home = () => {
 
   return (
     <section>
-        <HomeArtCont setSearchQueries={setSearchQueries} searchQueries={searchQueries}/>
+        <HomeArticleContainer setSearchQueries={setSearchQueries} searchQueries={searchQueries}/>
     </section>
   )
 }

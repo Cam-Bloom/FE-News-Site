@@ -1,8 +1,8 @@
 import { logDOM } from "@testing-library/react"
 import { useEffect, useState } from "react"
 import { fetchArticles } from "../../utils"
-import SmallArtCard from "../SmallArticleCard/SmallArticleCard"
-import "./HomeArtCont.css"
+import SmallArticleCard from "../SmallArticleCard/SmallArticleCard"
+import "./HomeArticleContainer.css"
 
 
 const HomeArtCont = ({searchQueries, setSearchQueries}) => {
@@ -27,9 +27,9 @@ const HomeArtCont = ({searchQueries, setSearchQueries}) => {
   
 
   return (
-    <section className="container">
+    <section className="homeContainer">
       <ul>
-        {articlesFromApi.map(article => <SmallArtCard key={article.article_id} article={article} />)}
+        {articlesFromApi.map(article => <SmallArticleCard key={article.article_id} article={article} />)}
       </ul>
       <button onClick={showAllArticles}>Show More</button>
     </section>

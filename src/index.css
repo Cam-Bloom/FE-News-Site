@@ -1,37 +1,41 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Playfair+Display:wght@500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Playfair+Display:wght@500;600;700&display=swap");
 
 body {
-  margin: 0;
-  font-family: var(--body-font);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: #F1F1F1;
-  font-weight: 300;
+	margin: 0;
+	font-family: var(--body-font);
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	background-color: #f1f1f1;
+	color: var(--colour-black);
+	font-weight: 300;
 }
 
-*{
-  /* border: 1px solid red; */
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  border: 0;
-  outline: 0;
-  list-style-type: none;
-  text-decoration: none;
+* {
+	/* border: 1px solid red; */
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	list-style-type: none;
+	text-decoration: none;
 }
 
 :root {
- --colour-pure-white: #FFFFFF;
- --colour-second-white: #F1F1F1;
- --colour-black: #1F1D1D;
- --colour-grey: #9D9EA0;
- --colour-brown: #8A644D;
- --colour-light-brown: #9B836A;
- --transition: all 400ms ease;
+	--colour-pure-white: #ffffff;
+	--colour-second-white: #f1f1f1;
+	--colour-black: #1f1d1d;
+	--colour-grey: #9d9ea0;
+	--colour-brown: #8a644d;
+	--colour-light-brown: #9b836a;
+	--transition: all 400ms ease;
 
- --body-font: 'Lato', sans-serif;
+	--body-font: "Lato", sans-serif;
 
- --title-font: 'Playfair Display', serif;
+	--title-font: "Playfair Display", serif;
+}
 
-
+h1,h2, h3{
+	font-family: var(--title-font);
+	font-weight: 600;
 }
