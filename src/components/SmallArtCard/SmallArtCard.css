@@ -1,30 +1,16 @@
-.smallCard {
-    display: flex;
-    height: 10rem;
-    border-radius: 1rem;
-    background-color: #FFFFFF;
-    margin: 1rem 0;
-}
 
-
-
-@media screen and (max-width: 600px) {
-
-img{
+.smallImg{
     border-radius: 1rem 0 0 1rem;
     max-width: 170px;
 }
 
 h3{
     margin: 1rem 1rem 1rem 0.5rem;
-    font-family: var(--title-font);
-    font-weight: 600;
 }
 
 button {
     padding: .5rem 1.25rem .5rem 1.25rem;
-    color: var(--colour-pure-white);
-    background-color: var(--colour-brown);
+    background-color: var(--colour-light-brown);
     border-radius: 1rem;
     border: 1px solid transparent;
     transition: var(--transition);
@@ -35,13 +21,14 @@ button:hover{
     border: 1px solid var(--colour-brown);
     color: var(--colour-brown);
     background-color: transparent;
+    cursor: pointer;
 }
 
 .smallCard {
     display: flex;
     height: 8rem;
     border-radius: 1rem;
-    background-color: #FFFFFF;
+    background-color: var(--colour-pure-white);
     margin: 1rem 0;
 }
 
@@ -58,6 +45,17 @@ button:hover{
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
-  }
+}
 
+
+
+@media screen and (min-width: 600px) {
+    
+    .smallCard {
+        display: flex;
+        /* height: 10rem; */
+        border-radius: 1rem;
+        background-color: #FFFFFF;
+        margin: 1rem 0;
+    }
 }

@@ -27,7 +27,7 @@ const HomeArtCont = ({searchQueries, setSearchQueries}) => {
   
 
   return (
-    <section className="container">
+    <section className="homeContainer">
       <ul>
         {articlesFromApi.map(article => <SmallArtCard key={article.article_id} article={article} />)}
       </ul>

@@ -5,7 +5,6 @@ export const newsApi = axios.create({
 });
 
 export const fetchArticles = (searchQueries) => {
-console.log(searchQueries)
 
 	return newsApi
 		.get("/articles", {
@@ -13,6 +12,18 @@ console.log(searchQueries)
 				limit: searchQueries.limit,
 			}
 		})
+		.then(({ data }) => {
+			return data;
+		})
+		.catch((err) => {
+			console.log(err);
+		});
+};
+
+export const fetchArticlesById = (article_id) => {
+
+	return newsApi
+		.get(`/articles/${article_id}`)
 		.then(({ data }) => {
 			return data;
 		})
