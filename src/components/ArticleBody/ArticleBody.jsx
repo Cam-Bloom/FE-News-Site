@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { fetchArticlesById } from "../../utils";
+import LikeButton from "../LikeButton/LikeButton";
 import "./ArticleBody.css";
 
 const ArticleBody = () => {
@@ -35,7 +36,7 @@ const ArticleBody = () => {
 			<div className="subArticleHeader">
 				<h5>{author}</h5>
 				<h5>{date}</h5>
-				<div>like placeholder</div>
+				<LikeButton votes={votes}/>
 			</div>
 			<p className="articleBody">{body}</p>
 		</section>
