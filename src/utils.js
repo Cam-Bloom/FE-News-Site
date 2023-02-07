@@ -44,3 +44,12 @@ export const fetchCommentsById = (article_id) => {
 		});
 };
 
+
+export const patchArticleVotes = (article_id) => {
+
+	return newsApi
+		.patch(`/articles/${article_id}`, { inc_votes: 1 })
+		.then((data) => {
+			return data;
+		})
+};
