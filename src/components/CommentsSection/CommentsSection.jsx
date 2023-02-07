@@ -1,27 +1,79 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { fetchCommentsById } from '../../utils'
+import { FiSend } from "react-icons/fi";
+import { fetchCommentsById } from "../../utils";
 import CommentCard from "../CommentCard/CommentCard";
-import './CommentsSection.css'
-
-
+import { postComment } from "../../utils";
+import "./CommentsSection.css";
 
 const CommentsSection = () => {
 	const { article_id } = useParams();
 
-  const [comments, setComments] = useState([])
+	const [comments, setComments] = useState([]);
+	const [writeComment, setWriteComment] = useState("");
+	const [err, setErr] = useState(null);
+  const [commentClassList, setCommentClassList] = useState(['postcomment'])
 
-  useEffect(() => {
-    fetchCommentsById(article_id)
-    .then(res => setComments(res.comments))
-  }, [])
+	const handleSubmit = (e) => {
+		e.preventDefault();
 
-  return (
-    <section className="commentSection">
-      <h2>Comments</h2>
-      {comments.map(comment => <CommentCard key={comment.comment_id} comment={comment}/>)}
-    </section>
-  )
-}
+    if (writeComment.length === 0) {
+      setCommentClassList(['postcomment', 'invalid'])
+    }
+    else {
 
-export default CommentsSection
+      setCommentClassList(['postcomment'])
+      setErr(null);
+      setWriteComment("");
+      setComments((currentComments) => [
+        { body: writeComment, author: "cooljmessy" },
+        ...currentComments,
+      ]);
+      
+      postComment(article_id, writeComment)
+      .catch((err) => {
+        setComments((currentComments) => {
+          const newComments = [...currentComments];
+          newComments.shift();
+          return newComments;
+        });
+
+        setErr("Something went wrong, please try again.");
+      });
+    }
+	};
+
+	useEffect(() => {
+		fetchCommentsById(article_id).then((res) => setComments(res.comments));
+	}, []);
+
+	return (
+		<section className="commentSection">
+			<h2>Comments</h2>
+
+			<form className={commentClassList.join(" ")} onSubmit={handleSubmit}>
+				<label htmlFor="comment">Write Comment</label>
+				<input
+					type="text"
+					id="comment"
+					value={writeComment}
+					onChange={(e) => {
+						setWriteComment(e.target.value);
+            (e.target.value.length === 0) ? setCommentClassList(['postcomment']) : setCommentClassList(['activeInput', 'postcomment'])
+					}}
+				/>
+				<button className="commentButton">
+					<FiSend />
+				</button>
+			</form>
+
+			{err ? <p>{err}</p> : null}
+
+			{comments.map((comment) => (
+				<CommentCard key={comment.comment_id} comment={comment} />
+			))}
+		</section>
+	);
+};
+
+export default CommentsSection;

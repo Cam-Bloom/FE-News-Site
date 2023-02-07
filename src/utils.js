@@ -44,3 +44,15 @@ export const fetchCommentsById = (article_id) => {
 		});
 };
 
+export const postComment = (article_id, commentBody) => {
+
+	return newsApi
+		.post(`/articles/${article_id}/comments`, {
+			body: commentBody,
+			username: "cooljmessy", //hard coded for now useContext loggein user later
+		  })
+		.then((data) => {
+			return data;
+		})
+};
+
