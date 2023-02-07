@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import HomeArtCont from '../HomeArtCont/HomeArtCont'
+import HomeArtCont from '../HomeArticleContainer/HomeArticleContainer'
 
 
 const Home = () => {

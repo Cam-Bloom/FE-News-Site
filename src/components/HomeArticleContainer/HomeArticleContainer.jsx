@@ -1,7 +1,7 @@
 import { logDOM } from "@testing-library/react"
 import { useEffect, useState } from "react"
 import { fetchArticles } from "../../utils"
-import SmallArtCard from "../SmallArtCard/SmallArtCard"
+import SmallArtCard from "../SmallArticleCard/SmallArticleCard"
 import "./HomeArtCont.css"
 
 
