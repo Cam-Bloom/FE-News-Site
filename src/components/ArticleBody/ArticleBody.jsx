@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { fetchArticlesById } from "../../utils";
+import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
 import "./ArticleBody.css";
 
 const ArticleBody = () => {
@@ -22,11 +23,7 @@ const ArticleBody = () => {
 	const date = created_at?.slice(0, 10).split("-").reverse().join("-");
 
 	return loading ? (
-		<div className="lds-facebook">
-			<div></div>
-			<div></div>
-			<div></div>
-		</div>
+		<LoadingSpinner/>
 	) : (
 		<section>
 			<img className="coverImg" src={article_img_url} alt={`${title} by ${author}`} />

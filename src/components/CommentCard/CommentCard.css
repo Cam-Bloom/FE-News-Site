@@ -1,0 +1,11 @@
+.commentCard{
+    border-radius: 1rem;
+    margin: 1rem 0.4rem;
+    padding: 0.5rem;
+    transition: var(--transition);
+}
+
+.commentCard > h5{
+    color: var(--colour-grey);
+}
+
