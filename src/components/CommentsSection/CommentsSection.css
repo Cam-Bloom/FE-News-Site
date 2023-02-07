@@ -34,6 +34,7 @@
 	background-color: var(--colour-second-white);;
 	border-radius: 0.5rem;
 	font-weight: 300;
+    border: 1px solid transparent;
 }
 
 .postcomment label {
@@ -44,6 +45,7 @@
 	transform: translate(0, 14px) scale(1);
 	transform-origin: top left;
 	transition: all 0.2s ease-out;
+   
 }
 
 .postcomment:focus-within label {
