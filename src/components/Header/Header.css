@@ -1,0 +1,17 @@
+h1{
+    font-family: var(--title-font);
+    font-weight: 700;
+    font-size: 3rem;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin:  0.25rem 1rem;
+}
+
+.icon{
+    font-size: 2.5rem;
+    margin-right: .75rem;
+}
