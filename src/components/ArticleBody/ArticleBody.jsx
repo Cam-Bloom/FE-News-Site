@@ -5,12 +5,11 @@ import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
 import LikeButton from "../LikeButton/LikeButton";
 import "./ArticleBody.css";
 
-const ArticleBody = () => {
+const ArticleBody = ({loading, setLoading}) => {
 	const { article_id } = useParams();
 	const navigate = useNavigate();
 
 	const [article, setArticle] = useState({});
-	const [loading, setLoading] = useState(false);
 
 	useEffect(() => {
 		setLoading(true);
