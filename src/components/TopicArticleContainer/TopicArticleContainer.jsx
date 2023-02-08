@@ -12,24 +12,22 @@ const TopicArticleContainer = () => {
 	const [topicArticlesApi, setTopicArticlesApi] = useState([]);
 	const [loading, setLoading] = useState(false);
 
-
 	useEffect(() => {
-		setLoading(true)
+		setLoading(true);
 		fetchArticles({ topic }).then((res) => {
-			setTopicArticlesApi(res.articles)
-			setLoading(false)});
+			setTopicArticlesApi(res.articles);
+			setLoading(false);
+		});
 	}, [topic]);
 
 	return loading ? (
-		<LoadingSpinner/>
+		<LoadingSpinner />
 	) : (
-		<section>
-			<ul className="topicContainer">
-				{topicArticlesApi.map((article) => (
-					<LargeArticleCard key={article.article_id} article={article} />
-				))}
-			</ul>
-		</section>
+		<ul className="topicContainer">
+			{topicArticlesApi.map((article) => (
+				<LargeArticleCard key={article.article_id} article={article} />
+			))}
+		</ul>
 	);
 };
 

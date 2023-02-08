@@ -4,8 +4,6 @@ import { FiSend } from "react-icons/fi";
 import { fetchCommentsById } from "../../utils";
 import CommentCard from "../CommentCard/CommentCard";
 import { postComment } from "../../utils";
-import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
-
 import "./CommentsSection.css";
 
 const CommentsSection = ({ loading }) => {

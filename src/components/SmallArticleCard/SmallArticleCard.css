@@ -59,7 +59,7 @@
 	overflow: hidden;
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 800px) {
 	.smallCard {
 		height: 10rem;
 	}

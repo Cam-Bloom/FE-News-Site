@@ -1,10 +1,12 @@
+import { useNavigate } from "react-router-dom";
 import "./LargeArticleCard.css";
 import { FaArrowCircleRight } from "react-icons/fa";
 
 const LargeArticleCard = ({ article }) => {
 	const { title, topic, author, body, created_at, votes, article_img_url, article_id } = article;
+	const navigate = useNavigate();
 
-  return (
+	return (
 		<li className="largeCard">
 			<img className="largeImg" src={article_img_url} alt={`${title} by ${author}`} />
 			<div className="largeCardInfo">
@@ -13,8 +15,8 @@ const LargeArticleCard = ({ article }) => {
 					<h5>{author}</h5>
 					<h5>{topic}</h5>
 				</div>
-        <p className="truncateBody largeCardBody">{body}</p>
-				<div className="readMore">
+				<p className="truncateBody largeCardBody">{body}</p>
+				<div className="readMore" onClick={() => {navigate(`/article/${article_id}`)}}>
 					<p>Read more</p>
 					<FaArrowCircleRight className="readArrow" />
 				</div>

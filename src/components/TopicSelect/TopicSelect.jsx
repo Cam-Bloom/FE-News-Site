@@ -7,19 +7,34 @@ import "swiper/css";
 import "./TopicSelect.css";
 
 const TopicSelect = () => {
-	const [topicListApi, setTopicListApi] = useState([]);
 	const { topic } = useParams();
 	const navigate = useNavigate();
+	const [topicListApi, setTopicListApi] = useState([]);
+	const [dimensions, setDimensions] = useState({
+		height: window.innerHeight,
+		width: window.innerWidth,
+	});
 
-	const handleNavigate = (topic) => {
-		navigate(`/topics/${topic}`);
-	};
+	const handleNavigate = (topic) => {navigate(`/topics/${topic}`);};
 
 	useEffect(() => {
 		fetchTopics().then((res) => {
 			const topicsArr = res.topics;
 			setTopicListApi(() => formatTopicArr(topicsArr, topic));
 		});
+	}, []);
+
+	useEffect(() => {
+		function handleResize() {
+			setDimensions({
+				height: window.innerHeight,
+				width: window.innerWidth,
+			});
+		}
+		window.addEventListener("resize", handleResize);
+		return () => {
+			window.removeEventListener("resize", handleResize);
+		};
 	}, []);
 
 	return (
@@ -34,7 +49,7 @@ const TopicSelect = () => {
 			<Swiper
 				className="topicSwiper"
 				spaceBetween={50}
-				slidesPerView={2}
+				slidesPerView={dimensions.width > 1200 ? 3 : 2}
 				onSlideChange={() => console.log("slide change")}
 				onSwiper={(swiper) => console.log(swiper)}
 			>
