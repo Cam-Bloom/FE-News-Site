@@ -1,11 +1,10 @@
-
 .smallCard {
 	display: flex;
 	height: 8rem;
 	border-radius: 1rem;
 	background-color: #ffffff;
-	margin: 1rem 0;
-    position: relative;
+	margin: 1.5rem 0;
+	position: relative;
 }
 
 .smallImg {
@@ -31,7 +30,7 @@
 	margin: 0.25rem 0 0 0.5rem;
 	align-items: center;
 	color: var(--colour-grey);
-    font-size: 0.8rem;
+	font-size: 0.8rem;
 }
 
 .readMore {
@@ -43,11 +42,10 @@
 	align-items: center;
 	transition: var(--transition);
 	cursor: pointer;
-    position: absolute;
-    right: 2rem;
-    bottom: 1rem;
+	position: absolute;
+	right: 2rem;
+	bottom: 1rem;
 }
-
 
 .readArrow {
 	font-size: 0.8rem;
@@ -55,9 +53,8 @@
 
 .readMore:hover {
 	color: var(--colour-brown);
+	transform: translateX(0.5rem);
 }
-
-
 
 .truncate {
 	text-overflow: ellipsis;
@@ -68,29 +65,27 @@
 }
 
 @media screen and (min-width: 600px) {
+	.smallCard {
+		height: 10rem;
+	}
 
-    .smallCard {
-        height: 10rem;
-    }
+	.smallImg {
+		max-width: 240px;
+	}
 
-    .smallImg {
-        max-width: 300px;
-    }
+	.smallCardTitle {
+		font-size: 1.4rem;
+	}
 
-    .smallCardTitle {
-        font-size: 1.4rem;
-    }
+	.readMore {
+		font-size: 1.2rem;
+	}
 
-    .readMore {
-        font-size: 1.2rem;
-    }
+	.readArrow {
+		font-size: 1rem;
+	}
 
-    .readArrow {
-        font-size: 1rem;
-    }
-
-    .subHeadigns {
-        font-size: 1rem;
-    }
-
+	.subHeadigns {
+		font-size: 1rem;
+	}
 }

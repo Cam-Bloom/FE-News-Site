@@ -74,7 +74,11 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-color: var(--colour-light-brown);
 	cursor: pointer;
+	background-color: var(--colour-light-brown);
     color: var(--colour-second-white);
+}
+
+.commentButton:hover{
+	transform: scale(1.025);
 }

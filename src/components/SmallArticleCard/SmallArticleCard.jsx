@@ -17,7 +17,7 @@ const SmallArtCard = ({ article }) => {
 			<div className="smallCardInfo">
 				<h3 className="truncate smallCardTitle">{title}</h3>
 				<div className="subHeadigns">
-					<h5>By: {author}</h5>
+					<h5>{author}</h5>
 					<h5>{topic}</h5>
 				</div>
 				<div className="readMore" onClick={readArticle}>
