@@ -1,5 +1,7 @@
+.topicSelect{
+	margin: 0 1rem;
+}
 .topicSwiper {
-	margin-left: 1.5rem;
 	cursor: grab;
 }
 
@@ -15,6 +17,10 @@
 	color: var(--colour-brown);
 }
 
+.topicsTitle{
+	font-size: 1.75rem
+}
+
 .activeTopic{
     color: var(--colour-brown);
     font-weight: 700;
@@ -28,4 +34,20 @@
 	-ms-user-select: none; /* Internet Explorer/Edge */
 	user-select: none; /* Non-prefixed version, currently
                                     supported by Chrome, Edge, Opera and Firefox */
+}
+
+.swipeText{
+	font-family: var(--title-font);
+	font-weight: 700;
+	color: var(--colour-black);
+	display: flex;
+	gap: 0.5rem;
+	align-items: center;
+	justify-content: center;
+	margin-right: 1rem;
+}
+
+.topicHeadings{
+	display: flex;
+	justify-content: space-between;
 }

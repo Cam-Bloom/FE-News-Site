@@ -11,7 +11,7 @@ const Header = () => {
   }
 
   return (
-    <header onClick={goHome}>
+    <header className='headershadow ' onClick={goHome}>
       <GiFlowerEmblem className='icon'/>
       <h1>Bloom News</h1>
     </header>
