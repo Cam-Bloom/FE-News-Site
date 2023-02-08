@@ -15,7 +15,9 @@ const TopicSelect = () => {
 		width: window.innerWidth,
 	});
 
-	const handleNavigate = (topic) => {navigate(`/topics/${topic}`);};
+	const handleNavigate = (topic) => {
+		navigate(`/topics/${topic}`);
+	};
 
 	useEffect(() => {
 		fetchTopics().then((res) => {
@@ -46,6 +48,7 @@ const TopicSelect = () => {
 					<FaArrowCircleRight className="readArrow" />
 				</div>
 			</div>
+
 			<Swiper
 				className="topicSwiper"
 				spaceBetween={50}
@@ -58,10 +61,7 @@ const TopicSelect = () => {
 						<SwiperSlide key={mapTopic.slug}>
 							<h2
 								className={`topicSlide noselect ${mapTopic.slug === topic ? "activeTopic" : ""}`}
-								onClick={() => {
-									handleNavigate(mapTopic.slug);
-								}}
-							>
+								onClick={() => {handleNavigate(mapTopic.slug)}}>
 								{capitalizeFirstLetter(mapTopic.slug)}
 							</h2>
 						</SwiperSlide>
@@ -69,10 +69,7 @@ const TopicSelect = () => {
 				})}
 				<SwiperSlide
 					className="topicSlide noselect"
-					onClick={() => {
-						navigate("/");
-					}}
-				>
+					onClick={() => {navigate("/");}}>
 					View All
 				</SwiperSlide>
 			</Swiper>
