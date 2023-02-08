@@ -1,16 +1,23 @@
-import { useState } from 'react'
-import HomeArticleContainer from '../HomeArticleContainer/HomeArticleContainer'
-
+import { useState } from "react";
+import HomeArticleContainer from "../HomeArticleContainer/HomeArticleContainer";
+import HomeSortSection from "../HomeSortSection/HomeSortSection";
 
 const Home = () => {
-  const [searchQueries, setSearchQueries] = useState({limit: undefined});
+	const [searchQueries, setSearchQueries] = useState({
+		limit: undefined,
+		topic: undefined,
+		sort_by: undefined,
+		order: undefined,
+	});
 
+  console.log(searchQueries)
 
-  return (
-    <section>
-        <HomeArticleContainer setSearchQueries={setSearchQueries} searchQueries={searchQueries}/>
-    </section>
-  )
-}
+	return (
+		<section>
+			<HomeSortSection setSearchQueries={setSearchQueries} />
+			<HomeArticleContainer setSearchQueries={setSearchQueries} searchQueries={searchQueries} />
+		</section>
+	);
+};
 
-export default Home
+export default Home;
