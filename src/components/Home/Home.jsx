@@ -11,7 +11,6 @@ const Home = () => {
 		order: undefined,
 	});
 
-  console.log(searchQueries)
 
 	return (
 		<section>

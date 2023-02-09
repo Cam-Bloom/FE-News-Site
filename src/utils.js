@@ -87,7 +87,6 @@ export const capitalizeFirstLetter = (string) => {
 };
 
 export const formatTopicArr = (arr, topic) => {
-	console.log(arr)
 	const arrCopy = [...arr]
 
 	const index = arr.findIndex((topicObj) => topic === topicObj.slug)

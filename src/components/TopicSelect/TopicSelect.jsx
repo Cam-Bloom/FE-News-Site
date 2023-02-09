@@ -53,8 +53,6 @@ const TopicSelect = () => {
 				className="topicSwiper"
 				spaceBetween={50}
 				slidesPerView={dimensions.width > 1200 ? 3 : 2}
-				onSlideChange={() => console.log("slide change")}
-				onSwiper={(swiper) => console.log(swiper)}
 			>
 				{topicListApi.map((mapTopic) => {
 					return (
