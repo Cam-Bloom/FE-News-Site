@@ -8,7 +8,14 @@
 .topicPageTitle{
     margin-left: 1.5rem;
     font-size: 3rem;
+}
 
+.topicError{
+    margin: 0 auto;
+    width: max-content;
+    font-size: 2rem;
+    font-weight: 600;
+	font-family: var(--title-font);
 }
 
 @media screen and (min-width: 900px) {

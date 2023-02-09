@@ -17,11 +17,12 @@ const ArticleBody = ({loading, setLoading, error, setError}) => {
 		.then((res) => {
 			setArticle(res.article);
 			setLoading(false);
+			setError(null)
 		})
 		.catch(err => {
+			console.log(err)
 			setLoading(false)
 			setError({err})
-			console.log(err)
 		})
 	}, []);
 
