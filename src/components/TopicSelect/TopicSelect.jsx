@@ -24,7 +24,7 @@ const TopicSelect = () => {
 			const topicsArr = res.topics;
 			setTopicListApi(() => formatTopicArr(topicsArr, topic));
 		});
-	}, []);
+	}, [topic]);
 
 	useEffect(() => {
 		function handleResize() {

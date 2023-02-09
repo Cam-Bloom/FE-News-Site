@@ -44,7 +44,7 @@ const CommentsSection = ({ loading }) => {
 
 	useEffect(() => {
 		fetchCommentsById(article_id).then((res) => setComments(res.comments));
-	}, []);
+	}, [article_id]);
 
 	return loading ? (
 		<></>

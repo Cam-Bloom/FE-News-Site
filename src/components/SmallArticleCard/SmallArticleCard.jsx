@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import "./SmallArticleCard.css";
 
 const SmallArtCard = ({ article }) => {
-	const { title, topic, author, body, created_at, votes, article_img_url, article_id } = article;
+	const { title, topic, author, article_img_url, article_id } = article;
 	const navigate = useNavigate();
 
 	return (

@@ -1,10 +1,9 @@
 import { RiDeleteBinLine } from "react-icons/ri";
 import { deleteComment } from "../../utils";
 import "./CommentCard.css";
-import { useState } from "react";
 
 const CommentCard = ({ comment, setComments }) => {
-	const { body, author, votes, created_at, comment_id } = comment;
+	const { body, author, comment_id } = comment;
 
 
   const handleDelete = () => {
