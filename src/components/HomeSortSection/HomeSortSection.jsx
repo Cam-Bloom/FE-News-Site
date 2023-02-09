@@ -25,7 +25,8 @@ const HomeSortSection = ({ setSearchQueries }) => {
 	};
 
 	return (
-		<section>
+		<section className="sortBySection">
+			<h2 className="homeArticleTitle">All Articles</h2>
 			<div className="sortByExpander" onClick={handleToggle}>
 				<label className="clickOn">Filter</label>
 				<span className="sortByIcon">{clicked ? <FaRegWindowMinimize />: <FaChevronDown className="expandChevron"/>} </span>

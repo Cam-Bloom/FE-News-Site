@@ -70,3 +70,7 @@ button:hover{
 .flex{
 	display: flex;
 }
+
+section{
+	margin-top: 3rem;
+}

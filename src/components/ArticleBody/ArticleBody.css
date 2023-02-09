@@ -1,6 +1,6 @@
 .coverImg {
 	max-width: 100%;
-	border-radius: 1rem 1rem 0 0;
+	border-radius: 0.5rem 0.5rem 0 0;
 }
 
 .subArticleHeader {
@@ -15,8 +15,8 @@
 .topicTag {
 	background-color: var(--colour-light-brown);
 	width: max-content;
-	padding: 0.4rem 1rem 0.4rem 1rem;
-	border-radius: 0.5rem;
+	padding: 0.4rem 0.8rem;
+	border-radius: 0.25rem;
 	margin: 0.8rem;
 	color: var(--colour-pure-white);
 	cursor: pointer;

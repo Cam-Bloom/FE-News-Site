@@ -11,7 +11,7 @@ const LargeArticleCard = ({ article }) => {
 			<img className="largeImg" src={article_img_url} alt={`${title} by ${author}`} />
 			<div className="largeCardInfo">
 				<h3 className="truncate largeCardTitle">{title}</h3>
-				<div className="subHeadigns">
+				<div className="largeCardSubHeadigns">
 					<h5>{author}</h5>
 					<h5 className="clickOn" onClick={() => {navigate(`/topics/${topic}`)}}>{topic}</h5>
 				</div>

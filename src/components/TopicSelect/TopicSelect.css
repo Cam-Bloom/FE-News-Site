@@ -8,7 +8,7 @@
 .topicSlide {
 	font-size: 2.5rem;
 	font-family: var(--title-font);
-	font-weight: 600;
+	font-weight: 500;
 	cursor: pointer;
 	width: max-content;
 }
@@ -18,12 +18,12 @@
 }
 
 .topicsTitle{
-	font-size: 1.75rem
+	font-size: 1.75rem;
+	font-weight: 700;
 }
 
 .activeTopic{
     color: var(--colour-brown);
-    font-weight: 700;
 }
 
 .noselect {
