@@ -1,8 +1,6 @@
 import { useState } from "react";
 import HomeArticleContainer from "../HomeArticleContainer/HomeArticleContainer";
 import HomeSortSection from "../HomeSortSection/HomeSortSection";
-import { useState } from "react";
-import HomeArticleContainer from "../HomeArticleContainer/HomeArticleContainer";
 import TopicSelect from "../TopicSelect/TopicSelect.jsx";
 
 const Home = () => {
