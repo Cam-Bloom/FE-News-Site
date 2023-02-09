@@ -9,6 +9,8 @@ export const fetchArticles = (searchQueries) => {
 		.get("/articles", {
 			params: {
 				limit: searchQueries.limit,
+				sort_by: searchQueries.sort_by,
+				order: searchQueries.order,
 				topic: searchQueries.topic,
 			},
 		})
