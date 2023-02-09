@@ -13,7 +13,7 @@ const LargeArticleCard = ({ article }) => {
 				<h3 className="truncate largeCardTitle">{title}</h3>
 				<div className="subHeadigns">
 					<h5>{author}</h5>
-					<h5>{topic}</h5>
+					<h5 className="clickOn" onClick={() => {navigate(`/topics/${topic}`)}}>{topic}</h5>
 				</div>
 				<p className="truncateBody largeCardBody">{body}</p>
 				<div className="readMore" onClick={() => {navigate(`/article/${article_id}`)}}>

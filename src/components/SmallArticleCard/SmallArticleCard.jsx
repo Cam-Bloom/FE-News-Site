@@ -13,7 +13,7 @@ const SmallArtCard = ({ article }) => {
 				<h3 className="truncate smallCardTitle">{title}</h3>
 				<div className="subHeadigns">
 					<h5>{author}</h5>
-					<h5>{topic}</h5>
+					<h5  className="clickOn" onClick={() => {navigate(`/topics/${topic}`)}}>{topic}</h5>
 				</div>
 				<div className="readMore" onClick={() => {navigate(`/article/${article_id}`)}}>
 					<p>Read more</p>
