@@ -1,0 +1,25 @@
+.topicContainer{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin: 1rem;
+}
+
+.topicPageTitle{
+    margin-left: 1.5rem;
+    font-size: 3rem;
+
+}
+
+@media screen and (min-width: 900px) {
+    .topicContainer{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .topicContainer{
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+}

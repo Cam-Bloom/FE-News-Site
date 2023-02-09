@@ -1,16 +1,16 @@
-import { useState } from 'react'
-import HomeArticleContainer from '../HomeArticleContainer/HomeArticleContainer'
-
+import { useState } from "react";
+import HomeArticleContainer from "../HomeArticleContainer/HomeArticleContainer";
+import TopicSelect from "../TopicSelect/TopicSelect.jsx";
 
 const Home = () => {
-  const [searchQueries, setSearchQueries] = useState({limit: undefined});
+	const [searchQueries, setSearchQueries] = useState({ limit: undefined });
 
-
-  return (
+	return (
     <section>
-        <HomeArticleContainer setSearchQueries={setSearchQueries} searchQueries={searchQueries}/>
-    </section>
-  )
-}
+			<TopicSelect />
+			<HomeArticleContainer setSearchQueries={setSearchQueries} searchQueries={searchQueries} />
+		</section>
+	);
+};
 
-export default Home
+export default Home;

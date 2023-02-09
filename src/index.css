@@ -56,3 +56,7 @@ button:hover{
     color: var(--colour-brown);
     background-color: transparent;
 }
+
+.clickOn{
+	cursor: pointer;
+}

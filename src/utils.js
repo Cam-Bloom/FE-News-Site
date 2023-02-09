@@ -5,12 +5,12 @@ export const newsApi = axios.create({
 });
 
 export const fetchArticles = (searchQueries) => {
-
 	return newsApi
 		.get("/articles", {
-			params:{
+			params: {
 				limit: searchQueries.limit,
-			}
+				topic: searchQueries.topic,
+			},
 		})
 		.then(({ data }) => {
 			return data;
@@ -21,7 +21,6 @@ export const fetchArticles = (searchQueries) => {
 };
 
 export const fetchArticlesById = (article_id) => {
-
 	return newsApi
 		.get(`/articles/${article_id}`)
 		.then(({ data }) => {
@@ -33,7 +32,6 @@ export const fetchArticlesById = (article_id) => {
 };
 
 export const fetchCommentsById = (article_id) => {
-
 	return newsApi
 		.get(`/articles/${article_id}/comments`)
 		.then(({ data }) => {
@@ -45,23 +43,45 @@ export const fetchCommentsById = (article_id) => {
 };
 
 export const postComment = (article_id, commentBody) => {
-
 	return newsApi
 		.post(`/articles/${article_id}/comments`, {
 			body: commentBody,
 			username: "cooljmessy", //hard coded for now useContext loggein user later
-		  })
+		})
 		.then((data) => {
 			return data;
-		})
+		});
 };
-
 
 export const patchArticleVotes = (article_id) => {
+	return newsApi.patch(`/articles/${article_id}`, { inc_votes: 1 }).then((data) => {
+		return data;
+	});
+};
 
+export const fetchTopics = () => {
 	return newsApi
-		.patch(`/articles/${article_id}`, { inc_votes: 1 })
-		.then((data) => {
+		.get(`/topics`)
+		.then(({ data }) => {
 			return data;
 		})
+		.catch((err) => {
+			console.log(err);
+		});
 };
+
+export const capitalizeFirstLetter = (string) => {
+	return string.charAt(0).toUpperCase() + string.slice(1);
+};
+
+export const formatTopicArr = (arr, topic) => {
+	console.log(arr)
+	const arrCopy = [...arr]
+
+	const index = arr.findIndex((topicObj) => topic === topicObj.slug)
+	const selectedTopic = arrCopy.splice(index, 1)
+
+	const newArr = [...selectedTopic, ...arrCopy]
+
+	return newArr;
+  }

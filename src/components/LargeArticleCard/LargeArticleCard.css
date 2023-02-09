@@ -1,0 +1,30 @@
+.largeCard{
+    border-radius: 1rem;
+	background-color: #ffffff;
+    margin: 0 auto;
+    position: relative;
+    padding-bottom: 3rem;
+    max-width: 600px;
+}
+
+.largeImg{
+    border-radius: 1rem 1rem 0 0;
+    width:100%;
+}
+
+.truncateBody {
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+}
+
+.largeCardTitle{
+    font-size: 1.4rem;
+    margin: 0.5rem;
+}
+
+.largeCardBody{
+    margin: 0 0.5rem
+}

@@ -1,15 +1,15 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { fetchArticlesById } from "../../utils";
 import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
 import LikeButton from "../LikeButton/LikeButton";
 import "./ArticleBody.css";
 
-const ArticleBody = () => {
+const ArticleBody = ({loading, setLoading}) => {
 	const { article_id } = useParams();
+	const navigate = useNavigate();
 
 	const [article, setArticle] = useState({});
-	const [loading, setLoading] = useState(false);
 
 	useEffect(() => {
 		setLoading(true);
@@ -28,7 +28,7 @@ const ArticleBody = () => {
 	) : (
 		<section>
 			<img className="coverImg" src={article_img_url} alt={`${title} by ${author}`} />
-			<h5 className="topicTag">{topic}</h5>
+			<h5 className="topicTag" onClick={() => {navigate(`/topics/${topic}`)}} >{topic}</h5>
 			<h2 className="articleHeader">{title}</h2>
 			<div className="subArticleHeader">
 				<h5>{author}</h5>
