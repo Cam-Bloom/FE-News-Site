@@ -7,11 +7,12 @@ import './ArticleContainer.css'
 const ArticleContainer = () => {
 
 	const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null)
 
   return (
     <section className='articleContainer'>
-        <ArticleBody loading={loading} setLoading={setLoading}/>
-        <CommentsSection loading={loading}/>
+        <ArticleBody loading={loading} setLoading={setLoading} error={error} setError={setError}/>
+        <CommentsSection loading={loading}  error={error}/>
     </section>
   )
 }

@@ -23,23 +23,17 @@ export const fetchArticles = (searchQueries) => {
 export const fetchArticlesById = (article_id) => {
 	return newsApi
 		.get(`/articles/${article_id}`)
-		.then(({ data }) => {
+		.then(( data ) => {
 			return data;
-		})
-		.catch((err) => {
-			console.log(err);
 		});
 };
 
 export const fetchCommentsById = (article_id) => {
 	return newsApi
 		.get(`/articles/${article_id}/comments`)
-		.then(({ data }) => {
+		.then((data ) => {
 			return data;
 		})
-		.catch((err) => {
-			console.log(err);
-		});
 };
 
 export const postComment = (article_id, commentBody) => {

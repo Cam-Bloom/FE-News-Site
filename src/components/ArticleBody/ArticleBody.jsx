@@ -5,27 +5,35 @@ import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
 import LikeButton from "../LikeButton/LikeButton";
 import "./ArticleBody.css";
 
-const ArticleBody = ({loading, setLoading}) => {
+const ArticleBody = ({loading, setLoading, error, setError}) => {
 	const { article_id } = useParams();
 	const navigate = useNavigate();
-
+	
 	const [article, setArticle] = useState({});
 
 	useEffect(() => {
 		setLoading(true);
-		fetchArticlesById(article_id).then((res) => {
+		fetchArticlesById(article_id)
+		.then((res) => {
 			setArticle(res.article);
 			setLoading(false);
-		});
+		})
+		.catch(err => {
+			setLoading(false)
+			setError({err})
+			console.log(err)
+		})
 	}, []);
 
 	const { title, topic, author, body, created_at, votes, article_img_url } = article;
 
 	const date = created_at?.slice(0, 10).split("-").reverse().join("-");
+	
+	if (loading) return <LoadingSpinner/>
 
-	return loading ? (
-		<LoadingSpinner/>
-	) : (
+	if (error) return <p className="articleError">Error: Article Not Found</p>
+
+	return (
 		<section>
 			<img className="coverImg" src={article_img_url} alt={`${title} by ${author}`} />
 			<h5 className="topicTag" onClick={() => {navigate(`/topics/${topic}`)}} >{topic}</h5>
