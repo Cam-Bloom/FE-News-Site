@@ -45,10 +45,11 @@ button {
     padding: .5rem 1.25rem .5rem 1.25rem;
     color: var(--colour-pure-white);
     background-color: var(--colour-brown);
-    border-radius: 1rem;
+    border-radius: .5rem;
     border: 2px solid transparent;
     transition: var(--transition);
     font-weight: 500;
+	cursor: pointer;
 }
 
 button:hover{

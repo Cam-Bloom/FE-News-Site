@@ -1,9 +1,16 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
+import { FaChevronDown, FaRegWindowMinimize } from "react-icons/fa";
 import "./HomeSortSection.css";
 
 const HomeSortSection = ({ setSearchQueries }) => {
 	const [sortBy, setSortBy] = useState("created_at");
 	const [order, setOrder] = useState(false);
+	const [clicked, setClicked] = useState(false);
+	const contentEl = useRef();
+
+	const handleToggle = () => {
+		setClicked((prev) => !prev);
+	};
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
@@ -18,27 +25,39 @@ const HomeSortSection = ({ setSearchQueries }) => {
 	};
 
 	return (
-		<form onSubmit={handleSubmit} className="sortBy">
-			<label>Sort by</label>
-			<select value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
-				<option value="created_at">Date</option>
-				<option value="comment_count">Comment Count</option>
-				<option value="votes">Votes</option>
-			</select>
-			<div className="flex buttonContainer">
-				<div className="toggle">
-					<input
-						type="checkbox"
-						checked={order}
-						onChange={() => {
-							setOrder((current) => !current);
-						}}
-					/>
-					<label></label>
-				</div>
-				<button>search</button>
+		<section>
+			<div className="sortByExpander" onClick={handleToggle}>
+				<label>Sort By</label>
+				<span className="sortByIcon">{clicked ? <FaRegWindowMinimize /> : <FaChevronDown />} </span>
 			</div>
-		</form>
+
+			<div
+				ref={contentEl}
+				className="sortByWrapper"
+				style={clicked ? { height: contentEl.current.scrollHeight } : { height: "0px" }}
+			>
+				<form onSubmit={handleSubmit} className="sortBy">
+					<select value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
+						<option value="created_at">Date</option>
+						<option value="comment_count">Comment Count</option>
+						<option value="votes">Votes</option>
+					</select>
+					
+					<div className="toggle">
+						<input
+							type="checkbox"
+							checked={order}
+							onChange={() => {
+								setOrder((current) => !current);
+							}}
+						/>
+						<label></label>
+					</div>
+					
+					<button>Search</button>
+				</form>
+			</div>
+		</section>
 	);
 };
 
