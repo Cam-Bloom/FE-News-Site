@@ -6,7 +6,7 @@ import CommentCard from "../CommentCard/CommentCard";
 import { postComment } from "../../utils";
 import "./CommentsSection.css";
 
-const CommentsSection = ({ loading }) => {
+const CommentsSection = ({ loading , error }) => {
 	const { article_id } = useParams();
 
 	const [comments, setComments] = useState([]);
@@ -43,11 +43,13 @@ const CommentsSection = ({ loading }) => {
 	};
 
 	useEffect(() => {
-		fetchCommentsById(article_id).then((res) => setComments(res.comments));
+		fetchCommentsById(article_id)
+		.then((res) => setComments(res.comments))
+		.catch((err) => console.log(err))
 	}, [article_id]);
 
-	return loading ? (
-		<></>
+	return (loading || error) ? (
+		""
 	) : (
 		<section className="commentSection">
 			<h2>Comments</h2>

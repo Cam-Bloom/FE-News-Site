@@ -11,18 +11,29 @@ const TopicArticleContainer = () => {
 
 	const [topicArticlesApi, setTopicArticlesApi] = useState([]);
 	const [loading, setLoading] = useState(false);
+	const [error, setError] = useState(null)
+
 
 	useEffect(() => {
 		setLoading(true);
-		fetchArticles({ topic }).then((res) => {
+		fetchArticles({ topic })
+		.then(res => {
 			setTopicArticlesApi(res.articles);
+			setError(null)
 			setLoading(false);
-		});
+		})
+		.catch(err => {
+			console.log(err)
+			setError({err})
+			setLoading(false);
+		})
 	}, [topic]);
 
-	return loading ? (
-		<LoadingSpinner />
-	) : (
+	if (loading) return <LoadingSpinner/>
+
+	if (error) return <p className="topicError">Error: Topic Not Found</p>
+
+	return (
 		<ul className="topicContainer">
 			{topicArticlesApi.map((article) => (
 				<LargeArticleCard key={article.article_id} article={article} />
