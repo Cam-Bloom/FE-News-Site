@@ -61,3 +61,7 @@ button:hover{
 .flex{
 	display: flex;
 }
+
+.pointer{
+	cursor: pointer;
+}

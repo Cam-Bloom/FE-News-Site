@@ -27,8 +27,8 @@ const HomeSortSection = ({ setSearchQueries }) => {
 	return (
 		<section>
 			<div className="sortByExpander" onClick={handleToggle}>
-				<label>Sort By</label>
-				<span className="sortByIcon">{clicked ? <FaRegWindowMinimize /> : <FaChevronDown />} </span>
+				<label className="pointer">Filter</label>
+				<span className="sortByIcon">{clicked ? <FaRegWindowMinimize />: <FaChevronDown className="expandChevron"/>} </span>
 			</div>
 
 			<div
@@ -54,7 +54,7 @@ const HomeSortSection = ({ setSearchQueries }) => {
 						<label></label>
 					</div>
 					
-					<button>Search</button>
+					<button>Filter</button>
 				</form>
 			</div>
 		</section>
