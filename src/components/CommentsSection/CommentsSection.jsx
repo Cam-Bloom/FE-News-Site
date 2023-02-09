@@ -28,15 +28,17 @@ const CommentsSection = ({ loading }) => {
 				...currentComments,
 			]);
 
-			postComment(article_id, writeComment).catch((err) => {
-				setComments((currentComments) => {
-					const newComments = [...currentComments];
-					newComments.shift();
-					return newComments;
-				});
+			postComment(article_id, writeComment)
+				.then(() => fetchCommentsById(article_id).then((res) => setComments(res.comments)))
+				.catch((err) => {
+					setComments((currentComments) => {
+						const newComments = [...currentComments];
+						newComments.shift();
+						return newComments;
+					});
 
-				setErr("Something went wrong, please try again.");
-			});
+					setErr("Something went wrong, please try again.");
+				});
 		}
 	};
 
@@ -71,7 +73,7 @@ const CommentsSection = ({ loading }) => {
 			{err ? <p>{err}</p> : null}
 
 			{comments.map((comment) => (
-				<CommentCard key={comment.comment_id} comment={comment} />
+				<CommentCard key={comment.comment_id} setComments={setComments} comment={comment} />
 			))}
 		</section>
 	);

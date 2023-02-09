@@ -70,6 +70,16 @@ export const fetchTopics = () => {
 		});
 };
 
+// /api/comments/:comment_id
+
+export const deleteComment = (comment_id) => {
+	return newsApi
+		.delete(`/comments/${comment_id}`)
+		.catch((err) => {
+			console.log(err);
+		});
+};
+
 export const capitalizeFirstLetter = (string) => {
 	return string.charAt(0).toUpperCase() + string.slice(1);
 };
