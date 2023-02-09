@@ -8,6 +8,7 @@ body {
 	background-color: #f1f1f1;
 	color: var(--colour-black);
 	font-weight: 300;
+	scroll-behavior: smooth;
 }
 
 * {

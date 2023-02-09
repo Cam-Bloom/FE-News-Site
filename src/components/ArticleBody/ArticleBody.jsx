@@ -17,7 +17,7 @@ const ArticleBody = ({loading, setLoading}) => {
 			setArticle(res.article);
 			setLoading(false);
 		});
-	}, []);
+	}, [article_id, setLoading]);
 
 	const { title, topic, author, body, created_at, votes, article_img_url } = article;
 
