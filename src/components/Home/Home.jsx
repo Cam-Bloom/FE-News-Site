@@ -2,6 +2,7 @@ import { useState } from "react";
 import HomeArticleContainer from "../HomeArticleContainer/HomeArticleContainer";
 import HomeSortSection from "../HomeSortSection/HomeSortSection";
 // import TopicSelect from "../TopicSelect/TopicSelect.jsx";
+import './Home.css'
 
 const Home = () => {
 	const [searchQueries, setSearchQueries] = useState({
@@ -13,7 +14,7 @@ const Home = () => {
 
 
 	return (
-		<div>
+		<div className="homePage">
 			<HomeSortSection setSearchQueries={setSearchQueries} />
 			<HomeArticleContainer setSearchQueries={setSearchQueries} searchQueries={searchQueries} />
 			{/* <TopicSelect /> */}

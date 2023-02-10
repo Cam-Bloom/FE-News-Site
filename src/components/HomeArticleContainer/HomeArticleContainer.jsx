@@ -30,7 +30,7 @@ const HomeArtCont = ({ searchQueries, setSearchQueries }) => {
 		<LoadingSpinner />
 	) : (
 		<section className="homeContainer">
-			<ul>
+			<ul className="homeArticleList">
 				{articlesFromApi.map((article) => (
 					<SmallArticleCard key={article.article_id} article={article} />
 				))}

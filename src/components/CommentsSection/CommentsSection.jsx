@@ -6,7 +6,7 @@ import CommentCard from "../CommentCard/CommentCard";
 import { postComment } from "../../utils";
 import "./CommentsSection.css";
 
-const CommentsSection = ({ loading , error }) => {
+const CommentsSection = ({ loading, error }) => {
 	const { article_id } = useParams();
 
 	const [comments, setComments] = useState([]);
@@ -44,32 +44,32 @@ const CommentsSection = ({ loading , error }) => {
 
 	useEffect(() => {
 		fetchCommentsById(article_id)
-		.then((res) => setComments(res.comments))
-		.catch((err) => console.log(err))
+			.then((res) => setComments(res.comments))
+			.catch((err) => console.log(err));
 	}, [article_id]);
 
-	return (loading || error) ? (
+	return loading || error ? (
 		""
 	) : (
 		<section className="commentSection">
 			<h2>Comments</h2>
 
 			<form className={commentClassList.join(" ")} onSubmit={handleSubmit}>
-				<label htmlFor="comment">Write Comment</label>
-				<input
-					type="text"
-					id="comment"
-					value={writeComment}
-					onChange={(e) => {
-						setWriteComment(e.target.value);
-						e.target.value.length === 0
-							? setCommentClassList(["postcomment"])
-							: setCommentClassList(["activeInput", "postcomment"]);
-					}}
-				/>
-				<button className="commentButton">
-					<FiSend />
-				</button>
+					<label htmlFor="comment">Write Comment</label>
+					<input
+						type="text"
+						id="comment"
+						value={writeComment}
+						onChange={(e) => {
+							setWriteComment(e.target.value);
+							e.target.value.length === 0
+								? setCommentClassList(["postcomment"])
+								: setCommentClassList(["activeInput", "postcomment"]);
+						}}
+					/>
+					<button className="commentButton">
+						<FiSend />
+					</button>
 			</form>
 
 			{err ? <p>{err}</p> : null}
