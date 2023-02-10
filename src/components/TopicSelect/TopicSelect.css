@@ -15,6 +15,7 @@
 
 .topicSlide:hover {
 	color: var(--colour-brown);
+	transform: translateY(-0.15rem);
 }
 
 .topicsTitle{
@@ -50,4 +51,12 @@
 .topicHeadings{
 	display: flex;
 	justify-content: space-between;
+	margin-top: 1rem;
+}
+
+@media screen and (max-width: 400px) {
+	.topicSlide {
+		font-size: 2rem;
+	}
+
 }

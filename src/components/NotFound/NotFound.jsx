@@ -1,11 +1,13 @@
-import './NotFound.css'
+import "./NotFound.css";
+import Header from "../Header/Header";
 
 const NotFound = () => {
-  return (
-    <div>
-        <h2 className="errorMessage">Error 404: Page Not Found</h2>
-    </div>
-  )
-}
+	return (
+		<div>
+			<Header />
+			<h2 className="errorMessage">Error 404: Page Not Found</h2>
+		</div>
+	);
+};
 
-export default NotFound
+export default NotFound;

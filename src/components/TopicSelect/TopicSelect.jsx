@@ -66,8 +66,8 @@ const TopicSelect = () => {
 					);
 				})}
 				<SwiperSlide
-					className="topicSlide noselect"
-					onClick={() => {navigate("/");}}>
+					className={`topicSlide noselect ${topic === "allTopics" ? "activeTopic" : ""}`}
+					onClick={() => {navigate("/topics/allTopics");}}>
 					View All
 				</SwiperSlide>
 			</Swiper>

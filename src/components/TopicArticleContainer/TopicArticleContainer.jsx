@@ -16,7 +16,7 @@ const TopicArticleContainer = () => {
 
 	useEffect(() => {
 		setLoading(true);
-		fetchArticles({ topic })
+		((topic === "allTopics") ? fetchArticles({}) :fetchArticles({ topic }))
 		.then(res => {
 			setTopicArticlesApi(res.articles);
 			setError(null)
