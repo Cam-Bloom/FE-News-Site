@@ -4,7 +4,12 @@ h1 {
 	font-size: 3rem;
 }
 
-header {
+header{
+	display: flex;
+	justify-content: space-between;
+}
+
+.headerLogo {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -12,15 +17,26 @@ header {
 	cursor: pointer;
 	padding-bottom: 1rem;
 	padding-top: 0.75rem;
-	margin-bottom: 1rem;
+	margin-left: 1rem;
 }
 
 .icon {
 	font-size: 2.5rem;
 	margin-right: 0.75rem;
-
 	transform: translate(0px, 0.25rem);
 }
+
+.menuIcon{
+	margin-top: 2.2rem;
+	margin-right: 1.75rem;
+	font-size: 1.75rem;
+	cursor: pointer;
+}
+
+.menuIcon:hover {
+	color: var(--colour-brown);
+}
+
 .headershadow {
 	-webkit-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.15);
 	-moz-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.15);
@@ -28,10 +44,24 @@ header {
 }
 
 @media screen and (min-width: 1200px) {
-	header {
+	.headerLogo {
 		justify-content: flex-start;
 	}
+	header {
+		margin: 0 10rem;
+	}
+}
+
+@media screen and (max-width: 400px) {
+	h1{
+		font-size: 2rem;
+	}
+	.menuIcon{
+		margin-top: 1.5rem;
+	}
+
 	.icon {
-		margin-left: 10rem;
+		font-size: 2rem;
+		transform: translate(0px, 0.1rem);
 	}
 }

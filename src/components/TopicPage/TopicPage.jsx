@@ -1,14 +1,18 @@
-import TopicArticleContainer from '../TopicArticleContainer/TopicArticleContainer'
-import TopicSelect from '../TopicSelect/TopicSelect'
-import './TopicPage.css'
+import TopicArticleContainer from "../TopicArticleContainer/TopicArticleContainer";
+import TopicSelect from "../TopicSelect/TopicSelect";
+import Header from "../Header/Header";
+import "./TopicPage.css";
 
 const TopicPage = () => {
-  return (
-    <div className='topicPage'>
-      <TopicSelect/>
-      <TopicArticleContainer/>
-    </div>
-  )
-}
+	return (
+		<div>
+			<Header />
+			<div className="topicPage">
+				<TopicSelect />
+				<TopicArticleContainer />
+			</div>
+		</div>
+	);
+};
 
-export default TopicPage
+export default TopicPage;
