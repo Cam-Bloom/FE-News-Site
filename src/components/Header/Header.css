@@ -1,27 +1,37 @@
-h1{
-    font-family: var(--title-font);
-    font-weight: 700;
-    font-size: 3rem;
+h1 {
+	font-family: var(--title-font);
+	font-weight: 700;
+	font-size: 3rem;
 }
 
-header{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-   
-    cursor: pointer;
-    padding-bottom: 1rem;
-    padding-top: 0.75rem;
-    margin-bottom: 1rem;
+header {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	cursor: pointer;
+	padding-bottom: 1rem;
+	padding-top: 0.75rem;
+	margin-bottom: 1rem;
 }
 
-.icon{
-    font-size: 2.5rem;
-    margin-right: .75rem;
-    transform: translate(0px, 0.25rem);
+.icon {
+	font-size: 2.5rem;
+	margin-right: 0.75rem;
+
+	transform: translate(0px, 0.25rem);
 }
 .headershadow {
-    -webkit-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.15);
-  -moz-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.15);
-  box-shadow: 0 3px 5px rgba(57, 63, 72, 0.15);
+	-webkit-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.15);
+	-moz-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.15);
+	box-shadow: 0 3px 5px rgba(57, 63, 72, 0.15);
+}
+
+@media screen and (min-width: 1200px) {
+	header {
+		justify-content: flex-start;
+	}
+	.icon {
+		margin-left: 10rem;
+	}
 }
