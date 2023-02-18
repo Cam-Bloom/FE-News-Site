@@ -7,8 +7,6 @@ import { useContext } from "react";
 const LoginConfirmationBody = () => {
 	const navigate = useNavigate()
 	const {userDetails} = useContext(UserContext);
-
-    console.log(userDetails)
     const {name, avatar_url} = userDetails
 
 	return (

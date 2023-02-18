@@ -1,9 +1,13 @@
 import { RiDeleteBinLine } from "react-icons/ri";
 import { deleteComment } from "../../utils";
+import { UserContext } from '../../context/UserContext';
+import { useContext } from "react";
 import "./CommentCard.css";
 
 const CommentCard = ({ comment, setComments }) => {
 	const { body, author, comment_id } = comment;
+	const {userDetails} = useContext(UserContext);
+    const {username} = userDetails
 
 
   const handleDelete = () => {
@@ -22,7 +26,7 @@ const CommentCard = ({ comment, setComments }) => {
 				<h5>{author}</h5>
 				<p>{body}</p>
 			</div>
-			<RiDeleteBinLine onClick={handleDelete} className="deleteIcon"/>
+		{username === author && <RiDeleteBinLine onClick={handleDelete} className="deleteIcon"/>}
     </div>
 	);
 };
