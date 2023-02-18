@@ -19,6 +19,7 @@ This is a dyanamic React web app, which is built to be mobile first but is fully
 - Comment input with form validation and optimistic render
 - Delete comment with optimistic rendering
 - Conditional rendering e.g Loading spinner 
+- User Login (To try use username "grumpy19")
 - CSS3 animations
 
 ## 🚀 **Getting Started**
