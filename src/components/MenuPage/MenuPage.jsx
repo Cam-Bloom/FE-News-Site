@@ -18,7 +18,7 @@ const MenuPage = () => {
 				<Link className="menuNavLink" to="/aboutus">
 					About Us
 				</Link>
-				<Link className="menuNavLink" to="/">
+				<Link className="menuNavLink" to="/login">
 					Login
 				</Link>
 			</nav>

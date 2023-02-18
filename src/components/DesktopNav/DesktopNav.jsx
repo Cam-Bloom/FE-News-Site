@@ -6,7 +6,7 @@ const DesktopNav = () => {
     <nav className='desktopNav'>
         <Link className='navLink' to='/'>Home</Link>
         <Link className='navLink' to='/topics/allTopics' >Topics</Link>
-        <Link className='navLink' to='/'>About Us</Link>
+        <Link className='navLink' to='/aboutus'>About Us</Link>
     </nav>
   )
 }

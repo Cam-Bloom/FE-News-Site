@@ -8,7 +8,7 @@ const HomeTopArticleCard = ({article}) => {
 
   return (
     <div className="TopArticleCard">
-        <img src={article_img_url} className='TopArticleImg'></img>
+        <img src={article_img_url} className='TopArticleImg' alt="article"></img>
         <h2 className="TopArticleCardTitle" onClick={() => {navigate(`/article/${article_id}`)}}>{title} </h2>
     </div>
   )
