@@ -1,5 +1,6 @@
 .TopArticleSection {
 	position: relative;
+
 }
 
 .swiperNavNext .swiperNavPrev {
@@ -17,7 +18,7 @@
 	z-index: 1;
 	cursor: pointer;
 	left: 1.25rem;
-    color: var(--colour-pure-white);
+    color: var(--colour-second-white);
     font-size: 1.5rem;
     display: none;
 }
@@ -29,7 +30,7 @@
 	z-index: 1;
 	cursor: pointer;
 	right: 1.25rem;
-    color: var(--colour-pure-white);
+    color: var(--colour-second-white);
     font-size: 1.5rem;
     display: none;
 }

@@ -41,6 +41,7 @@ const LoginPageBody = () => {
 
 	return (
 		<section className="LoginSection">
+			<h2 className="loginTitle">Login</h2>
 			<form className={loginClassList.join(" ")} onSubmit={handleSubmit}>
 					<label htmlFor="comment">Enter Username</label>
 					<input
