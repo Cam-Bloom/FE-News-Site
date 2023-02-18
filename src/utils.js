@@ -44,11 +44,11 @@ export const fetchCommentsById = (article_id) => {
 		});
 };
 
-export const postComment = (article_id, commentBody) => {
+export const postComment = (article_id, commentBody, username) => {
 	return newsApi
 		.post(`/articles/${article_id}/comments`, {
 			body: commentBody,
-			username: "cooljmessy", //hard coded for now useContext loggein user later
+			username: username,
 		})
 		.then((data) => {
 			return data;
@@ -75,11 +75,9 @@ export const fetchTopics = () => {
 // /api/comments/:comment_id
 
 export const deleteComment = (comment_id) => {
-	return newsApi
-		.delete(`/comments/${comment_id}`)
-		.catch((err) => {
-			console.log(err);
-		});
+	return newsApi.delete(`/comments/${comment_id}`).catch((err) => {
+		console.log(err);
+	});
 };
 
 export const capitalizeFirstLetter = (string) => {
@@ -87,20 +85,18 @@ export const capitalizeFirstLetter = (string) => {
 };
 
 export const formatTopicArr = (arr, topic) => {
-	const arrCopy = [...arr]
+	const arrCopy = [...arr];
 
-	const index = arr.findIndex((topicObj) => topic === topicObj.slug)
-	const selectedTopic = arrCopy.splice(index, 1)
+	const index = arr.findIndex((topicObj) => topic === topicObj.slug);
+	const selectedTopic = arrCopy.splice(index, 1);
 
-	const newArr = [...selectedTopic, ...arrCopy]
+	const newArr = [...selectedTopic, ...arrCopy];
 
 	return newArr;
-  }
+};
 
-  export const fetchUserByUserId = (username) => {
-	return newsApi
-		.get(`/users/${username}`)
-		.then( data  => {
-			return data;
-		})
+export const fetchUserByUserId = (username) => {
+	return newsApi.get(`/users/${username}`).then((data) => {
+		return data;
+	});
 };
