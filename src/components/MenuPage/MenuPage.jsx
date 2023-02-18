@@ -15,7 +15,7 @@ const MenuPage = () => {
 				<Link className="menuNavLink" to="/topics/allTopics">
 					Topics
 				</Link>
-				<Link className="menuNavLink" to="/">
+				<Link className="menuNavLink" to="/aboutus">
 					About Us
 				</Link>
 				<Link className="menuNavLink" to="/">
