@@ -1,12 +1,19 @@
 import "./LoginPageBody.css";
-import { FiSend } from "react-icons/fi";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { UserContext } from '../../context/UserContext';
+import { fetchUserByUserId } from "../../utils";
+import { useNavigate } from "react-router-dom";
 
 
 const LoginPageBody = () => {
 
+	const navigate = useNavigate()
 	const [username, setUsername] = useState("");
 	const [loginClassList, setLoginClassList] = useState(["LoginInput"]);
+	const [notFound, setNotFound] = useState(false)
+	const {setLoggedInUser} = useContext(UserContext);
+	
+
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
@@ -16,6 +23,19 @@ const LoginPageBody = () => {
 		} else {
 			setLoginClassList(["LoginInput"]);
 			setUsername("");
+
+			fetchUserByUserId(username)
+			.then(res => {
+				setNotFound(false)
+				setLoggedInUser(username);
+				navigate('/loginconfirm')
+				
+			})
+			.catch(err => {
+				console.log(err)
+				setNotFound(true)
+				setLoginClassList(["LoginInput", "invalid"]);
+			})
 		}
 	};
 
@@ -38,6 +58,7 @@ const LoginPageBody = () => {
 						Login
 					</button>
 			</form>
+			{notFound ? <p className="UserNotFound">Username not found</p> : ""}
 		</section>
 	);
 };

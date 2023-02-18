@@ -97,13 +97,10 @@ export const formatTopicArr = (arr, topic) => {
 	return newArr;
   }
 
-  export const fetchUserByUserId = (user_id) => {
+  export const fetchUserByUserId = (username) => {
 	return newsApi
-		.get(`/users/${user_id}`)
-		.then(({ data }) => {
+		.get(`/users/${username}`)
+		.then( data  => {
 			return data;
 		})
-		.catch((err) => {
-			console.log(err);
-		});
 };

@@ -7,6 +7,7 @@ import MenuPage from "./components/MenuPage/MenuPage";
 import AboutUs from "./components/AboutUs/AboutUs";
 import LoginPage from "./components/LoginPage/LoginPage";
 import {UserProvider} from "./context/UserContext";
+import LoginConfirmation from "./components/LoginConfirmation/LoginConfirmation";
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
 					<Route path="/menu" element={<MenuPage />} />
 					<Route path="/aboutus" element={<AboutUs />} />
 					<Route path="/login" element={<LoginPage />} />
+					<Route path="/loginconfirm" element={<LoginConfirmation />} />
 					<Route path="*" element={<NotFound />} />
 				</Routes>
 			</UserProvider>

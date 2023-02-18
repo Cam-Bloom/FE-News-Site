@@ -15,9 +15,9 @@
 
 .LoginSection {
 	background-color: var(--colour-pure-white);
-    height: 80vh;
     margin: 1rem;
     padding: 1rem;
+	padding-bottom: 2rem;
     border-radius: 0.5rem;
 }
 
@@ -82,4 +82,10 @@
 
 .commentButton:hover {
 	transform: scale(1.025);
+}
+
+.UserNotFound{
+	color: rgb(180, 23, 23);
+	margin-left: 1.25rem;
+	margin-top: 0.25rem;
 }
