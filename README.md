@@ -18,9 +18,10 @@ This is a dyanamic React web app, which is built to be mobile first but is fully
 - Like button with optimistic rendering 
 - Comment input with form validation and optimistic render
 - Delete comment with optimistic rendering
+- Only delete logged in user comment by user context
 - Conditional rendering e.g Loading spinner 
-- User Login (To try use username "grumpy19")
 - CSS3 animations
+- User Login set to context (To try use username "grumpy19")
 
 ## 🚀 **Getting Started**
 
